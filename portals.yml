@@ -266,17 +266,17 @@ tracked_companies:
     enabled: true
 
   - name: JSX
-    careers_url: https://www.jsx.com/about/careers
+    careers_url: https://jsx.avature.net/careers
     scan_method: websearch
-    scan_query: 'site:jsx.com "operations" OR "coordinator" OR "customer" "California" OR "Los Angeles"'
-    notes: "Semi-private aviation. HQ Burbank, CA. Growing fast."
+    scan_query: 'site:jsx.avature.net OR site:jsx.com "Mission Coordinator" OR "operations" OR "coordinator" OR "customer" "Burbank" OR "California"'
+    notes: "Semi-private aviation. HQ Burbank. Uses Avature ATS. Mission Coordinator = flight coordination/logistics — strong fit."
     enabled: true
 
   - name: Surf Air
-    careers_url: https://jobs.lever.co/surfair
+    careers_url: https://www.surfair.com/careers/
     scan_method: websearch
-    scan_query: 'site:jobs.lever.co/surfair "operations" OR "coordinator" OR "customer"'
-    notes: "LA-based commuter/charter. Good aviation culture."
+    scan_query: 'site:surfair.com "operations" OR "coordinator" OR "customer" OR "member"'
+    notes: "LA-based commuter/charter. (Prior Lever slug was dead — verify current ATS.)"
     enabled: true
 
   # -- FBOs & general aviation (LA basin airports) --
@@ -316,13 +316,27 @@ tracked_companies:
     notes: "Charter MRO FBO. BUR presence."
     enabled: true
 
+  - name: Helinet Aviation
+    careers_url: https://helinet.com/careers/
+    scan_method: websearch
+    scan_query: 'site:helinet.com OR site:indeed.com "Helinet" "Flight Follower" OR "dispatcher" OR "scheduler" OR "operations" OR "customer"'
+    notes: "Van Nuys helicopter charter/EMS/film. Flight Follower (dispatch/scheduling) role = strong fit, no CFI needed."
+    enabled: true
+
+  - name: Menzies Aviation
+    careers_url: https://www.menziesaviation.com/careers/
+    scan_method: websearch
+    scan_query: 'site:menziesaviation.com OR site:indeed.com "Menzies" "operations coordinator" OR "dispatcher" OR "customer service" "Van Nuys" OR "Los Angeles" OR "LAX"'
+    notes: "Ground handling. Ops Coordinator roles at Van Nuys Airport — entry-friendly aviation ops."
+    enabled: true
+
   # -- Flight schools (SoCal) --
 
   - name: ATP Flight School
-    careers_url: https://atpflightschool.com/careers
+    careers_url: https://atp-flight-school.breezy.hr/
     scan_method: websearch
-    scan_query: 'site:atpflightschool.com "operations" OR "coordinator" OR "student success" OR "customer" "California"'
-    notes: "Largest US flight school. Multiple SoCal locations."
+    scan_query: 'site:atp-flight-school.breezy.hr OR site:atpflightschool.com "Training Support Manager" OR "operations" OR "student" OR "customer" "California" OR "Long Beach"'
+    notes: "Largest US flight school. Breezy HR ATS. Training Support Manager (ops + student success) is the role to watch. SoCal: Long Beach (LGB), La Verne (POC)."
     enabled: true
 
   - name: Cal Poly Pomona Aeronautical
@@ -363,15 +377,17 @@ tracked_companies:
     enabled: true
 
   - name: Joby Aviation
-    careers_url: https://job-boards.greenhouse.io/jobyaviation
-    api: https://boards-api.greenhouse.io/v1/boards/jobyaviation/jobs
-    notes: "eVTOL / air taxi. Santa Cruz HQ, LA operations coming. Flying future."
+    careers_url: https://www.jobyaviation.com/careers/
+    scan_method: websearch
+    scan_query: 'site:jobyaviation.com "operations" OR "coordinator" OR "customer" OR "flight"'
+    notes: "eVTOL / air taxi. Greenhouse slug 'jobyaviation' was dead — verify correct ATS slug. Flying future."
     enabled: true
 
   - name: Archer Aviation
-    careers_url: https://job-boards.greenhouse.io/archeraircraft
-    api: https://boards-api.greenhouse.io/v1/boards/archeraircraft/jobs
-    notes: "eVTOL air taxi. San Jose + LA market. Flying future."
+    careers_url: https://archer.com/careers
+    scan_method: websearch
+    scan_query: 'site:archer.com "operations" OR "coordinator" OR "customer" OR "flight"'
+    notes: "eVTOL air taxi. San Jose + LA market. Greenhouse slug 'archeraircraft' was dead — verify. Flying future."
     enabled: true
 
   - name: Wisk Aero
@@ -405,10 +421,10 @@ tracked_companies:
     enabled: true
 
   - name: Blade Air Mobility
-    careers_url: https://jobs.lever.co/blade
+    careers_url: https://www.blade.com/careers
     scan_method: websearch
-    scan_query: 'site:jobs.lever.co/blade "operations" OR "coordinator" OR "customer"'
-    notes: "Urban air mobility / helicopter. NYC+LA presence."
+    scan_query: 'site:blade.com "operations" OR "coordinator" OR "customer" OR "flight"'
+    notes: "Urban air mobility / helicopter. NYC+LA presence. Lever slug was dead — verify ATS."
     enabled: true
 
   # -- Airports --
