@@ -54,12 +54,13 @@ narrative:
   drained_by: "Busywork and repetitive low-value tasks"
   proof_points:
     - name: "Top Hawk Winner — Won a new aircraft for United Flight Systems"
-      url: ""
+      url: "https://youtu.be/6R2RspCSulU"
+      url_secondary: "https://txtav.com/en/top-hawk"
       hero_metric: >
-        Won a nationwide competition by producing a 15-minute video showcasing school history,
-        mission, and partnerships (ForeFlight, King Schools, E&E Aviation), plus a written story
-        and full operational plan. The plane directly increased school enrollment and aircraft
-        utilization.
+        Won Textron Aviation's nationwide Top Hawk competition by producing a 15-minute video
+        showcasing school history, mission, and partnerships (ForeFlight, King Schools, E&E
+        Aviation), plus a written story and full operational plan. The plane directly increased
+        school enrollment and aircraft utilization. Video: https://youtu.be/6R2RspCSulU
     - name: "Student Success Department (co-founded)"
       url: ""
       hero_metric: >
