@@ -44,11 +44,14 @@ narrative:
     ground role I take is also a stepping stone. Looking for a company in or adjacent to aviation
     where I can grow fast, add obvious value, and eventually move into the cockpit.
   superpowers:
+    - "Extreme adaptability — learns fast, hard worker, thrives in change"
+    - "Automation mindset — automated her own role to create capacity for growth"
     - "Building operations from zero — created Student Success department end-to-end"
-    - "Automation mindset — automated my own role to create capacity for growth"
     - "Executive-level support and stakeholder management under a CEO"
     - "Social media strategy tied to business outcomes (doubled engagement → enrollment growth)"
     - "Community leadership at scale (Feeding Houston: 250 families, 50+ sponsors, 20 volunteers)"
+  energized_by: "Meaningful work and maximizing efficiency; building and owning systems"
+  drained_by: "Busywork and repetitive low-value tasks"
   proof_points:
     - name: "Top Hawk Winner — Won a new aircraft for United Flight Systems"
       url: ""
@@ -89,7 +92,18 @@ aviation:
   certificate: "FAA Commercial Pilot Certificate — Single Engine Land"
   ratings: ["Instrument Rating — Airplane"]
   total_hours: 260
-  goal: "CFI certificate or flying role; every ground role should be in or adjacent to aviation"
+  in_progress: ["CFI (target: end of 2026)", "CFII (needed for most instructing roles)"]
+  goal: >
+    Flying career. Pursuing CFI now (goal end of 2026), then CFII. Open to any
+    flying-adjacent opportunity to build hours — flight instruction, banner towing,
+    SIC / second-in-command jet roles, etc.
+  network_strategy: >
+    New to LA aviation after moving from Houston (where she had a strong aviation
+    network). Staying in/near aviation is a deliberate way to immerse in LA's
+    tight-knit aviation community — weighs heavily in role fit.
+  note: >
+    Most flight-school instructing roles require an already-issued CFI/CFII, so for now
+    target non-instructing aviation roles (ops, dispatch, FBO/customer service, EA, charter).
   preferred_airports_area: "LAX, BUR, VNY, SMO, LGB, TOA, HHR, SNA"  # LA-area GA/commercial fields
 
 cv:
