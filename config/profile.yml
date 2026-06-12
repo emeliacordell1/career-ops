@@ -1,0 +1,100 @@
+# Career-Ops Profile — Emelia Cordell
+
+candidate:
+  full_name: "Emelia Cordell"
+  email: "emeliacordell1@gmail.com"
+  phone: "(832) 610-9463"
+  location: "Los Angeles, CA 90048"
+  linkedin: "linkedin.com/in/emeliacordell"
+  portfolio_url: ""
+  github: ""
+
+target_roles:
+  primary:
+    - "Aviation Operations Coordinator"
+    - "Flight School Operations Manager"
+    - "Executive Assistant (Aviation / Aerospace)"
+    - "Operations Coordinator"
+    - "Customer Success Manager"
+  archetypes:
+    - name: "Aviation Operations"
+      level: "Mid-level"
+      fit: "primary"       # dream — keeps foot in aviation, path to CFI/flying roles
+    - name: "Executive Assistant / Office Manager"
+      level: "Mid-level"
+      fit: "primary"       # strong track record, natural expansion
+    - name: "Customer / Student Success"
+      level: "Mid-level"
+      fit: "primary"       # built the department from scratch
+    - name: "Operations Manager"
+      level: "Mid-level"
+      fit: "secondary"     # broader ops roles outside aviation
+    - name: "Social Media / Content Coordinator"
+      level: "Mid-level"
+      fit: "adjacent"      # strong proof point but not primary target
+
+narrative:
+  headline: "Aviation operations professional who builds departments, wins planes, and automates herself out of the ceiling"
+  exit_story: >
+    Moved to Los Angeles from Houston after a defining stint at United Flight Systems, where I
+    co-founded a Student Success department, won a brand-new aircraft for the school in a
+    nationwide competition, doubled social media engagement, and automated enough of my own role
+    to keep expanding it into EA, bookkeeping, dispatch, and operations. I hold a Commercial
+    Pilot Certificate with 260 hours and I'm building toward a flying career — which means every
+    ground role I take is also a stepping stone. Looking for a company in or adjacent to aviation
+    where I can grow fast, add obvious value, and eventually move into the cockpit.
+  superpowers:
+    - "Building operations from zero — created Student Success department end-to-end"
+    - "Automation mindset — automated my own role to create capacity for growth"
+    - "Executive-level support and stakeholder management under a CEO"
+    - "Social media strategy tied to business outcomes (doubled engagement → enrollment growth)"
+    - "Community leadership at scale (Feeding Houston: 250 families, 50+ sponsors, 20 volunteers)"
+  proof_points:
+    - name: "Top Hawk Winner — Won a new aircraft for United Flight Systems"
+      url: ""
+      hero_metric: >
+        Won a nationwide competition by producing a 15-minute video showcasing school history,
+        mission, and partnerships (ForeFlight, King Schools, E&E Aviation), plus a written story
+        and full operational plan. The plane directly increased school enrollment and aircraft
+        utilization.
+    - name: "Student Success Department (co-founded)"
+      url: ""
+      hero_metric: >
+        Built white-glove student training management from scratch: personalized schedules,
+        financial planning, 24/7 support. Improved training completion and student retention.
+    - name: "Social Media Growth — United Flight Systems"
+      url: ""
+      hero_metric: "Doubled engagement across all platforms; contributed directly to enrollment increase."
+    - name: "Feeding Houston"
+      url: ""
+      hero_metric: "Founded and runs organization serving 250 families/year via 50+ sponsors. Active since 2017."
+
+compensation:
+  target_range: "$55,000–$75,000"    # livable in LA; open to hourly equivalents
+  currency: "USD"
+  minimum: "$50,000"                 # walk-away; adjust once you know your monthly expenses in LA
+  location_flexibility: "On-site or hybrid preferred; within ~1 hour of Los Angeles 90048"
+
+location:
+  country: "United States"
+  city: "Los Angeles"
+  state: "CA"
+  zip: "90048"
+  timezone: "PST"
+  visa_status: "No sponsorship needed"
+  max_commute_minutes: 60
+  willing_to_relocate: false
+
+aviation:
+  certificate: "FAA Commercial Pilot Certificate — Single Engine Land"
+  ratings: ["Instrument Rating — Airplane"]
+  total_hours: 260
+  goal: "CFI certificate or flying role; every ground role should be in or adjacent to aviation"
+  preferred_airports_area: "LAX, BUR, VNY, SMO, LGB, TOA, HHR, SNA"  # LA-area GA/commercial fields
+
+cv:
+  output_format: "html"
+
+cover_letter:
+  notice_period_days: 14
+  primary_domain: "aviation operations and executive support"

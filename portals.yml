@@ -1,0 +1,429 @@
+# Portal Scanner Configuration
+# Used by /career-ops scan to discover new offers automatically.
+#
+# Strategy (4 levels):
+#   0. Local parser → per-company `parser:` script for SSR/static career pages (zero-token)
+#   1. Playwright → careers_url of each company (real-time, reliable)
+#   2. HTTP JSON (WebFetch) → per-company `api:` on tracked_companies (see board_api_catalog below)
+#   3. WebSearch with site: filters (broad discovery, may be stale)
+#
+# IMPORTANT: Each company in tracked_companies MUST have careers_url.
+#   Prefer the BRANDED company careers URL whenever available; use ATS-hosted URL only as fallback.
+#   ✅ https://careers.mastercard.com   ⚠️ https://mastercard.wd1.myworkdayjobs.com (fallback only)
+#   ✅ https://openai.com/careers       ⚠️ https://job-boards.greenhouse.io/openai (fallback only)
+#   Exception: ATS-hosted careers_url is acceptable when no branded careers page exists.
+#   Using raw ATS URLs when a branded page exists can cause false 410 errors (job ID mismatch).
+#
+# HOW TO CUSTOMIZE:
+#   1. Copy this file to portals.yml in the project root
+#   2. Edit title_filter.positive with YOUR target role keywords
+#   3. Add/remove companies in tracked_companies
+#   4. Adjust search_queries for your preferred job boards
+#   5. Set enabled: false on companies you don't care about
+
+# -- Scan history recheck policy (optional) --
+# By default, URLs recorded in data/scan-history.tsv are deduped forever.
+# Set recheck_after_days to let previously added URLs become eligible again
+# after N days, useful for roles that reopen or are republished at the same URL.
+# Permanent invalid statuses such as blocked host or malformed URL still remain
+# deduped forever.
+#
+# scan_history:
+#   recheck_after_days: 30
+
+# -- Location filter (optional) --
+# Filter scanned jobs by location. Applied AFTER title filter, BEFORE dedup.
+# If this entire block is absent, all locations pass (current default behavior).
+#
+# Semantics (case-insensitive substring, in this order):
+#   - Empty location string on a job → pass (don't penalize missing data)
+#   - Any `always_allow` keyword present → pass (takes precedence over `block`)
+#   - Any `block` keyword present → reject
+#   - `allow` empty → pass (already cleared block)
+#   - `allow` non-empty → must match at least one keyword
+#
+# `always_allow` is optional. It rescues multi-location postings that name your
+# home region: with always_allow ["New York"] and block ["India"], a job listed
+# "Remote, New York or India" passes (New York wins), while "Remote, India" is
+# still rejected. Omit always_allow entirely and the filter behaves as before.
+#
+# Example below targets US-based remote + a couple of US metros, blocking
+# common foreign hubs. Customize to your geography.
+
+# location_filter:
+#   # always_allow is checked BEFORE block — keep this list to your home region only
+#   always_allow:
+#     - "United States"   # (replace with your home region)
+#     - "New York"
+#   allow:
+#     - "Remote"
+#     - "United States"
+#     - "USA"
+#     - "Atlanta"
+#     - "New York"
+#   block:
+#     - "India"
+#     - "Bengaluru"
+#     - "United Kingdom"
+#     - "London"
+#     - "Germany"
+#     - "France"
+#     - "Singapore"
+#     - "Japan"
+#     - "Brazil"
+#     - "Australia"
+
+# -- Salary filter (optional) --
+# Filter scanned jobs by annual compensation range. Applied AFTER location
+# filter, BEFORE dedup. Only applies when structured salary data exists.
+#
+# Semantics:
+#   - min/max are annual compensation filters (use annualized values)
+#   - max: 0 means "no upper limit"
+#   - If no salary data exists on a job, it passes (conservative behavior)
+#   - If both currencies are known and differ, the job is rejected by the salary filter
+#   - Partial ranges (min only or max only) work correctly
+#   - If this entire block is absent, salary is not filtered (default behavior)
+#
+# Example: target roles paying at least $100k, no upper limit
+# salary_filter:
+#   min: 100000
+#   max: 0
+#   currency: "USD"
+
+# -- Title filter --
+# The scanner uses these keywords to decide if a title is relevant.
+# At least 1 positive must match AND 0 negatives must match (case-insensitive).
+
+title_filter:
+  positive:
+    # -- Aviation operations --
+    - "Aviation"
+    - "Flight Operations"
+    - "Flight Coordinator"
+    - "Flight Dispatcher"
+    - "Dispatcher"
+    - "Air Operations"
+    - "Airline Operations"
+    - "Airport Operations"
+    - "Ground Operations"
+    - "FBO"
+    - "Charter"
+    - "Pilot"
+    - "CFI"
+    - "Flight Instructor"
+    - "Flight School"
+    - "Ramp"
+    - "Line Service"
+    # -- Operations & admin --
+    - "Operations Coordinator"
+    - "Operations Manager"
+    - "Operations Assistant"
+    - "Office Manager"
+    - "Executive Assistant"
+    - "Administrative"
+    - "Admin"
+    - "Coordinator"
+    # -- Customer / student success --
+    - "Customer Success"
+    - "Student Success"
+    - "Client Success"
+    - "Account Coordinator"
+    - "Client Services"
+    # -- Scheduling / logistics --
+    - "Scheduler"
+    - "Scheduling Coordinator"
+    - "Logistics Coordinator"
+  negative:
+    - "Software Engineer"
+    - "Developer"
+    - "Backend"
+    - "Frontend"
+    - "Full Stack"
+    - "Data Engineer"
+    - "DevOps"
+    - "Machine Learning"
+    - "Data Scientist"
+    - "Blockchain"
+    - "Web3"
+    - "Crypto"
+    - "Embedded"
+    - "Firmware"
+  seniority_boost:
+    - "Senior"
+    - "Lead"
+    - "Manager"
+    - "Director"
+    - "Head of"
+
+# -- Search queries --
+# Each query triggers a WebSearch. Use site: to filter by portal.
+# The scanner extracts title, URL, and company from results.
+
+search_queries:
+  # -- General aviation jobs boards --
+  - name: Indeed — Aviation Operations LA
+    query: 'site:indeed.com "aviation" "operations" OR "coordinator" OR "dispatcher" "Los Angeles" OR "Burbank" OR "Van Nuys" OR "Long Beach"'
+    enabled: true
+
+  - name: Indeed — Flight School LA
+    query: 'site:indeed.com "flight school" OR "flight training" "operations" OR "coordinator" OR "executive assistant" "Los Angeles" OR "California"'
+    enabled: true
+
+  - name: Indeed — Executive Assistant Aviation
+    query: 'site:indeed.com "executive assistant" "aviation" OR "aerospace" OR "airline" "Los Angeles" OR "California"'
+    enabled: true
+
+  - name: Indeed — Operations Coordinator LA
+    query: 'site:indeed.com "operations coordinator" OR "operations manager" "aviation" OR "aerospace" OR "airport" "Los Angeles" OR "LAX" OR "Burbank" OR "Van Nuys"'
+    enabled: true
+
+  - name: LinkedIn — Aviation Ops LA
+    query: 'site:linkedin.com/jobs "aviation operations" OR "flight operations" OR "airport operations" "Los Angeles" OR "Burbank" OR "Van Nuys" OR "Long Beach"'
+    enabled: true
+
+  - name: LinkedIn — FBO & Charter LA
+    query: 'site:linkedin.com/jobs "FBO" OR "charter operations" OR "ground operations" "Los Angeles" OR "Van Nuys" OR "Burbank" OR "Torrance"'
+    enabled: true
+
+  - name: LinkedIn — EA & Ops Aviation
+    query: 'site:linkedin.com/jobs "executive assistant" OR "operations coordinator" "aviation" OR "aerospace" "Los Angeles" OR "Southern California"'
+    enabled: true
+
+  - name: Glassdoor — Aviation LA
+    query: 'site:glassdoor.com/job-listing "aviation" OR "flight" "operations" OR "coordinator" "Los Angeles" OR "Burbank" OR "Van Nuys"'
+    enabled: true
+
+  - name: AviationJobSearch — Operations
+    query: 'site:aviationjobsearch.com "operations" OR "coordinator" OR "dispatcher" OR "executive assistant" "California" OR "Los Angeles"'
+    enabled: true
+
+  - name: AeroCareers — LA/SoCal
+    query: 'site:aerocareers.com "operations" OR "coordinator" OR "dispatcher" "California" OR "Los Angeles" OR "Southern California"'
+    enabled: true
+
+  - name: Greenhouse — Operations Coordinator LA
+    query: 'site:job-boards.greenhouse.io "operations coordinator" OR "aviation" OR "flight operations" "Los Angeles" OR "California"'
+    enabled: true
+
+  - name: Lever — Aviation & Ops LA
+    query: 'site:jobs.lever.co "aviation" OR "flight operations" OR "operations coordinator" "Los Angeles" OR "California"'
+    enabled: true
+
+  - name: Customer Success — LA
+    query: 'site:jobs.ashbyhq.com OR site:job-boards.greenhouse.io OR site:jobs.lever.co "customer success" OR "client success" "Los Angeles" OR "California"'
+    enabled: true
+
+# -- Tracked companies --
+# Aviation companies, FBOs, airlines, and flight schools with LA-area presence.
+
+tracked_companies:
+
+  # -- Airlines (LA hubs) --
+
+  - name: Southwest Airlines
+    careers_url: https://careers.southwestairlines.com
+    scan_method: websearch
+    scan_query: 'site:careers.southwestairlines.com "operations" OR "coordinator" OR "dispatcher" "Los Angeles" OR "California"'
+    notes: "Major LAX hub. Operations and admin roles."
+    enabled: true
+
+  - name: United Airlines
+    careers_url: https://careers.united.com
+    scan_method: websearch
+    scan_query: 'site:careers.united.com "operations" OR "coordinator" OR "dispatcher" "Los Angeles" OR "LAX"'
+    notes: "Major LAX hub."
+    enabled: true
+
+  - name: American Airlines
+    careers_url: https://jobs.aa.com
+    scan_method: websearch
+    scan_query: 'site:jobs.aa.com "operations" OR "coordinator" OR "dispatcher" "Los Angeles" OR "LAX"'
+    notes: "LAX hub."
+    enabled: true
+
+  - name: Alaska Airlines
+    careers_url: https://alaskaair.jobs
+    scan_method: websearch
+    scan_query: 'site:alaskaair.jobs "operations" OR "coordinator" "Los Angeles" OR "California"'
+    notes: "Strong West Coast presence."
+    enabled: true
+
+  - name: Delta Air Lines
+    careers_url: https://delta.avature.net/careers
+    scan_method: websearch
+    scan_query: 'site:delta.avature.net "operations" OR "coordinator" "Los Angeles" OR "LAX"'
+    notes: "LAX hub."
+    enabled: true
+
+  # -- Regional & cargo airlines --
+
+  - name: SkyWest Airlines
+    careers_url: https://www.skywest.com/fly-skywest-airlines/careers
+    scan_method: websearch
+    scan_query: 'site:skywest.com "operations" OR "coordinator" OR "dispatcher" "California"'
+    notes: "Regional carrier, CA hub."
+    enabled: true
+
+  - name: JSX
+    careers_url: https://www.jsx.com/about/careers
+    scan_method: websearch
+    scan_query: 'site:jsx.com "operations" OR "coordinator" OR "customer" "California" OR "Los Angeles"'
+    notes: "Semi-private aviation. HQ Burbank, CA. Growing fast."
+    enabled: true
+
+  - name: Surf Air
+    careers_url: https://jobs.lever.co/surfair
+    scan_method: websearch
+    scan_query: 'site:jobs.lever.co/surfair "operations" OR "coordinator" OR "customer"'
+    notes: "LA-based commuter/charter. Good aviation culture."
+    enabled: true
+
+  # -- FBOs & general aviation (LA basin airports) --
+
+  - name: Signature Aviation (Van Nuys/LAX)
+    careers_url: https://signatureaviation.com/en/careers
+    scan_method: websearch
+    scan_query: 'site:signatureaviation.com "operations" OR "coordinator" OR "customer service" "Van Nuys" OR "Los Angeles" OR "Burbank"'
+    notes: "Largest FBO chain. VNY, BUR, LGB, LAX locations."
+    enabled: true
+
+  - name: Atlantic Aviation
+    careers_url: https://atlanticaviation.com/careers
+    scan_method: websearch
+    scan_query: 'site:atlanticaviation.com "operations" OR "coordinator" OR "customer" "California" OR "Los Angeles"'
+    notes: "FBO. Multiple SoCal locations."
+    enabled: true
+
+  - name: Million Air
+    careers_url: https://millionair.com/careers
+    scan_method: websearch
+    scan_query: 'site:millionair.com "operations" OR "coordinator" OR "customer" "California"'
+    notes: "Upscale FBO. Strong culture for career-minded ops staff."
+    enabled: true
+
+  - name: Clay Lacy Aviation
+    careers_url: https://claylacy.com/careers
+    scan_method: websearch
+    scan_query: 'site:claylacy.com "operations" OR "coordinator" OR "charter" OR "customer"'
+    notes: "LA-based charter/FBO legend. Van Nuys HQ."
+    enabled: true
+
+  - name: Jet Aviation
+    careers_url: https://www.jetaviation.com/careers
+    scan_method: websearch
+    scan_query: 'site:jetaviation.com "operations" OR "coordinator" OR "customer" "California" OR "Los Angeles"'
+    notes: "Charter MRO FBO. BUR presence."
+    enabled: true
+
+  # -- Flight schools (SoCal) --
+
+  - name: ATP Flight School
+    careers_url: https://atpflightschool.com/careers
+    scan_method: websearch
+    scan_query: 'site:atpflightschool.com "operations" OR "coordinator" OR "student success" OR "customer" "California"'
+    notes: "Largest US flight school. Multiple SoCal locations."
+    enabled: true
+
+  - name: Cal Poly Pomona Aeronautical
+    careers_url: https://www.cpp.edu/~aerospace/
+    scan_method: websearch
+    scan_query: '"Cal Poly Pomona" aviation OR aerospace "coordinator" OR "operations" OR "administrator" site:cpp.edu OR site:indeed.com'
+    notes: "University program — operations/admin adjacent."
+    enabled: true
+
+  - name: California Flight Academy
+    careers_url: https://californiaflightacademy.com
+    scan_method: websearch
+    scan_query: '"California Flight Academy" OR "CFA" "operations" OR "coordinator" OR "student success" site:indeed.com OR site:linkedin.com'
+    notes: "SoCal flight school."
+    enabled: true
+
+  # -- Aerospace & MRO (LA basin) --
+
+  - name: SpaceX
+    careers_url: https://www.spacex.com/careers
+    scan_method: websearch
+    scan_query: 'site:spacex.com/careers "operations coordinator" OR "executive assistant" OR "logistics" OR "flight operations" "Hawthorne" OR "Los Angeles"'
+    notes: "HQ Hawthorne, CA (~20 min from 90048). Ops roles exist."
+    enabled: true
+
+  - name: Northrop Grumman
+    careers_url: https://www.northropgrumman.com/careers
+    scan_method: websearch
+    scan_query: 'site:northropgrumman.com "operations coordinator" OR "executive assistant" OR "logistics coordinator" "Los Angeles" OR "El Segundo" OR "Palmdale"'
+    notes: "Major LA-area aerospace employer."
+    enabled: true
+
+  - name: Boeing (El Segundo / Long Beach)
+    careers_url: https://jobs.boeing.com
+    scan_method: websearch
+    scan_query: 'site:jobs.boeing.com "operations coordinator" OR "executive assistant" OR "flight operations" OR "scheduler" "El Segundo" OR "Long Beach" OR "Los Angeles"'
+    notes: "Large LA-area workforce. Ops and admin roles."
+    enabled: true
+
+  - name: Joby Aviation
+    careers_url: https://job-boards.greenhouse.io/jobyaviation
+    api: https://boards-api.greenhouse.io/v1/boards/jobyaviation/jobs
+    notes: "eVTOL / air taxi. Santa Cruz HQ, LA operations coming. Flying future."
+    enabled: true
+
+  - name: Archer Aviation
+    careers_url: https://job-boards.greenhouse.io/archeraircraft
+    api: https://boards-api.greenhouse.io/v1/boards/archeraircraft/jobs
+    notes: "eVTOL air taxi. San Jose + LA market. Flying future."
+    enabled: true
+
+  - name: Wisk Aero
+    careers_url: https://wisk.aero/careers
+    scan_method: websearch
+    scan_query: 'site:wisk.aero "operations" OR "coordinator" OR "customer"'
+    notes: "Autonomous eVTOL. Google-backed."
+    enabled: true
+
+  # -- Corporate aviation / charter --
+
+  - name: NetJets
+    careers_url: https://careers.netjets.com
+    scan_method: websearch
+    scan_query: 'site:careers.netjets.com "operations" OR "coordinator" OR "customer" OR "dispatcher" "California" OR "Los Angeles"'
+    notes: "World's largest private aviation company."
+    enabled: true
+
+  - name: Wheels Up
+    careers_url: https://wheelsup.com/careers
+    scan_method: websearch
+    scan_query: 'site:wheelsup.com "operations" OR "coordinator" OR "member services" OR "dispatcher" "Los Angeles" OR "California"'
+    notes: "Private aviation membership. LAX ops."
+    enabled: true
+
+  - name: Flexjet
+    careers_url: https://flexjet.com/careers
+    scan_method: websearch
+    scan_query: 'site:flexjet.com "operations" OR "coordinator" OR "customer" "California" OR "Los Angeles"'
+    notes: "Fractional private aviation."
+    enabled: true
+
+  - name: Blade Air Mobility
+    careers_url: https://jobs.lever.co/blade
+    scan_method: websearch
+    scan_query: 'site:jobs.lever.co/blade "operations" OR "coordinator" OR "customer"'
+    notes: "Urban air mobility / helicopter. NYC+LA presence."
+    enabled: true
+
+  # -- Airports --
+
+  - name: Los Angeles World Airports (LAWA)
+    careers_url: https://careers.lawa.org
+    scan_method: websearch
+    scan_query: 'site:careers.lawa.org OR "LAWA" "operations coordinator" OR "administrative" OR "coordinator" OR "dispatcher"'
+    notes: "Manages LAX + VNY. Public sector, strong benefits."
+    enabled: true
+
+  - name: Burbank Airport (BUR)
+    careers_url: https://hollywoodburbankairport.com/careers
+    scan_method: websearch
+    scan_query: '"Burbank Airport" OR "BUR" "operations" OR "coordinator" OR "administrative" site:hollywoodburbankairport.com OR site:indeed.com'
+    notes: "Close to 90048. Smaller airport, good culture."
+    enabled: true
+
