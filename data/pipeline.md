@@ -1,11 +1,11 @@
 # Pipeline — Pending Offers Inbox
 
 ## Pending
-- [ ] https://www.claylacy.com/company/careers/ | Clay Lacy Aviation | Charter Coordinator / Customer Service (Van Nuys FBO)
-- [ ] https://jobs.signatureaviation.com/en/sites/CX_1 | Signature Aviation | Guest Experience Specialist (Van Nuys)
-- [ ] https://jsx.avature.net/careers | JSX | Mission Coordinator (flight coordination/logistics)
-- [ ] https://www.indeed.com/q-helinet-aviation-l-van-nuys,-ca-jobs.html | Helinet Aviation | Flight Follower / Dispatcher (Van Nuys)
-- [ ] https://atp-flight-school.breezy.hr/ | ATP Flight School | Training Support Manager (ops + student success)
+<!-- Add new job URLs here as: - [ ] {url} | {company} | {role} -->
 
 ## Processed
-<!-- Completed offers move here: - [x] #NNN | URL | Company | Role | Score/5 | PDF ✅/❌ -->
+- [x] #1 | https://atpflightschool.com/jobs/ | ATP Flight School | Training Support Manager | 4.5/5 | PDF ❌
+- [x] #2 | https://helinet.com/careers/ | Helinet Aviation | Flight Follower (Dispatcher) | 4.3/5 | PDF ❌
+- [x] #3 | https://www.claylacy.com/company/careers/ | Clay Lacy Aviation | Charter Coordinator / CSR | 4.2/5 | PDF ❌
+- [x] #4 | https://jsx.avature.net/careers | JSX | Mission Coordinator | 4.0/5 | PDF ❌
+- [x] #5 | https://jobs.signatureaviation.com/en/sites/CX_1 | Signature Aviation | Guest Experience Specialist | 3.5/5 | PDF ❌
