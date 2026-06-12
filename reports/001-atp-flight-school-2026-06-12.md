@@ -3,9 +3,10 @@
 **Date:** 2026-06-12
 **URL:** https://atpflightschool.com/jobs/ (role: Training Support Manager; SoCal centers incl. Long Beach LGB)
 **Archetype:** Operations / Student Success (hybrid)
-**Score:** 4.5/5
-**Legitimacy:** High Confidence
-**Verification:** unconfirmed (batch mode — Playwright unavailable; confirm live posting before applying)
+**Score:** 4.5/5 (fit score — but role is NOT currently open)
+**Status:** Discarded — role not currently available
+**Legitimacy:** N/A — verified 2026-06-12: no Training Support Manager/Specialist open on ATP's board; only A&P maintenance roles open in CA. The scored listing was a CLOSED Fort Myers, FL posting.
+**Verification:** CONFIRMED CLOSED (re-checked live boards 2026-06-12)
 **PDF:** not generated — Playwright unavailable in this environment. Generate on demand via `/career-ops pdf atp-flight-school` (renders HTML you can print-to-PDF in your iPad browser).
 
 ---
