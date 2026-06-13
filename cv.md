@@ -79,7 +79,7 @@ Bachelor of Science *(in progress, May 2024 – Present)*
 
 ## Certifications & Licenses
 
-- **FAA Commercial Pilot Certificate** — Single Engine Land | 260 hours total time
+- **FAA Commercial Pilot Certificate** — Single Engine Land
 - **FAA Instrument Rating** — Airplane
 - **Veterans Affairs SCO Certified**
 - **CPR Certified** — June 2023
