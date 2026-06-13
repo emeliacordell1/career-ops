@@ -15,7 +15,7 @@ Operations and executive professional with a track record of building systems, l
 
 ### United Flight Systems — Spring, TX
 **Executive Assistant to CEO / Student Success Co-Founder / Operations Assistant**
-*November 2023 – Present*
+*November 2023 – June 2026*
 
 - Serve on the company Leadership Team as the CEO's primary support — executive communications, travel, media coordination, and high-level vendor relations.
 - Co-founded and built the **Student Success department**: designed a white-glove training management system that matches each student's schedule, goals, timeline, and financial situation; provided 24/7 customer support.
