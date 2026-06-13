@@ -25,6 +25,7 @@ Operations and executive professional with a track record of building systems, l
 - Acted as the primary point of contact and company representative in the owner's absence.
 - Administered the company Scholarship Program (applications, outreach, award logistics).
 - Planned and executed company-wide and community events strengthening internal culture and public presence.
+- Served as DHS Registered Provider Agent, managing international student enrollment, visa compliance, and SEVIS reporting under the Student and Exchange Visitor Program (SEVP).
 - Oversaw office management, vendor relationships, inventory, and daily workflow for continuous operational readiness.
 
 ### Hair Rescue — Klein, TX
@@ -81,6 +82,7 @@ Bachelor of Science *(in progress, May 2024 – Present)*
 
 - **FAA Commercial Pilot Certificate** — Single Engine Land
 - **FAA Instrument Rating** — Airplane
+- **DHS Registered Provider Agent** — Student and Exchange Visitor Program (SEVP)
 - **Veterans Affairs SCO Certified**
 - **CPR Certified** — June 2023
 - **Basic American Sign Language Certified**
