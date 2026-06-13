@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emelia Cordell — CV</title>
+<title>Emelia Cordell — Resume</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -13,536 +13,297 @@
   }
 
   body {
-    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 11px;
-    line-height: 1.55;
-    color: #1a1a2e;
-    background: #ffffff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 11pt;
+    line-height: 1.45;
+    color: #000;
+    background: #fff;
   }
 
   .page {
-    width: 100%;
-    max-width: 8.3in;
+    max-width: 7.5in;
     margin: 0 auto;
-    padding: 0.45in 0.55in;
+    padding: 0.7in 0.8in;
   }
 
   /* ===== HEADER ===== */
-  .header { margin-bottom: 18px; }
+  .header {
+    text-align: center;
+    margin-bottom: 14px;
+  }
 
   .header h1 {
-    font-size: 26px;
-    font-weight: 700;
-    color: #1a1a2e;
-    letter-spacing: -0.01em;
+    font-size: 17pt;
+    font-weight: bold;
     margin-bottom: 5px;
-    line-height: 1.1;
+    letter-spacing: 0.01em;
   }
 
-  .header-gradient {
-    height: 2px;
-    background: linear-gradient(to right, hsl(187, 74%, 30%), hsl(270, 65%, 43%));
-    border-radius: 1px;
-    margin-bottom: 9px;
+  .contact-line {
+    font-size: 10.5pt;
   }
 
-  .contact-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px 12px;
-    font-size: 10.5px;
-    color: #555;
+  /* ===== SECTION HEADING ===== */
+  .section {
+    margin-bottom: 10px;
   }
-
-  .contact-row a { color: #555; text-decoration: none; }
-  .contact-row .sep { color: #ccc; }
-
-  /* ===== SECTION ===== */
-  .section { margin-bottom: 16px; }
 
   .section-title {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: hsl(187, 74%, 28%);
-    border-bottom: 1.5px solid #e2e2e2;
-    padding-bottom: 3px;
-    margin-bottom: 9px;
+    font-size: 11pt;
+    font-weight: bold;
+    text-decoration: underline;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1px;
+    margin-bottom: 7px;
+    margin-top: 14px;
   }
 
   /* ===== SUMMARY ===== */
-  .summary-text {
-    font-size: 10.5px;
-    line-height: 1.7;
-    color: #2f2f2f;
+  .summary-para {
+    font-size: 10.5pt;
+    line-height: 1.6;
   }
 
   /* ===== COMPETENCIES ===== */
-  .competencies-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+  .competencies-line {
+    font-size: 10pt;
+    line-height: 1.7;
+    color: #111;
   }
 
-  .tag {
-    font-size: 9.5px;
-    font-weight: 500;
-    color: hsl(187, 74%, 26%);
-    background: hsl(187, 40%, 95%);
-    padding: 3px 9px;
-    border-radius: 3px;
-    border: 1px solid hsl(187, 40%, 86%);
+  /* ===== ORG / JOB ENTRIES ===== */
+  .org-block {
+    margin-bottom: 10px;
   }
 
-  /* ===== EXPERIENCE ===== */
-  .job { margin-bottom: 13px; }
-
-  .job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: 2px;
+  .org-name {
+    font-weight: bold;
+    font-size: 11pt;
   }
 
-  .job-company {
-    font-size: 12px;
-    font-weight: 700;
-    color: hsl(270, 65%, 43%);
-  }
-
-  .job-period {
-    font-size: 10px;
-    color: #777;
-    white-space: nowrap;
-  }
-
-  .job-meta {
-    font-size: 10.5px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 5px;
-  }
-
-  .job-location {
-    font-size: 10px;
-    color: #888;
-    font-weight: 400;
-    margin-left: 6px;
-  }
-
-  .job ul {
-    padding-left: 16px;
-    margin-top: 4px;
-  }
-
-  .job li {
-    font-size: 10.5px;
-    line-height: 1.6;
-    color: #333;
+  .org-title {
+    font-style: italic;
+    font-size: 10.5pt;
     margin-bottom: 3px;
   }
 
-  .job li strong { font-weight: 600; }
-
-  /* ===== PROJECTS ===== */
-  .project { margin-bottom: 11px; }
-
-  .project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: 2px;
+  ul {
+    padding-left: 22px;
+    margin: 3px 0 0 0;
+    list-style-type: disc;
   }
 
-  .project-title {
-    font-size: 11.5px;
-    font-weight: 700;
-    color: hsl(270, 65%, 43%);
-  }
-
-  .project-badge {
-    font-size: 9px;
-    font-weight: 500;
-    color: hsl(187, 74%, 28%);
-    background: hsl(187, 40%, 95%);
-    padding: 1px 6px;
-    border-radius: 2px;
-    margin-left: 6px;
-    white-space: nowrap;
-  }
-
-  .project-year {
-    font-size: 10px;
-    color: #777;
-    white-space: nowrap;
-  }
-
-  .project-desc {
-    font-size: 10.5px;
-    color: #444;
-    line-height: 1.6;
-  }
-
-  .project-link {
-    font-size: 9.5px;
-    color: hsl(187, 74%, 28%);
-    text-decoration: none;
+  li {
+    font-size: 10.5pt;
+    line-height: 1.45;
+    margin-bottom: 3px;
   }
 
   /* ===== EDUCATION ===== */
-  .edu-item { margin-bottom: 8px; }
-
-  .edu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 10px;
+  .edu-school {
+    font-weight: bold;
+    font-size: 11pt;
   }
 
-  .edu-title {
-    font-size: 11px;
-    font-weight: 600;
-    color: #333;
+  .edu-degree {
+    font-size: 10.5pt;
+    margin-top: 1px;
   }
 
-  .edu-org {
-    color: hsl(270, 65%, 43%);
-    font-weight: 500;
+  /* ===== HONORS ===== */
+  .honor-line {
+    font-size: 10.5pt;
+    font-weight: bold;
+    margin-bottom: 3px;
   }
 
-  .edu-year {
-    font-size: 10px;
-    color: #777;
-    white-space: nowrap;
-  }
-
-  .edu-desc {
-    font-size: 10px;
-    color: #666;
-    margin-top: 2px;
-    line-height: 1.5;
-  }
-
-  /* ===== AWARDS ===== */
-  .award-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: 5px;
-  }
-
-  .award-name {
-    font-size: 10.5px;
-    font-weight: 600;
-    color: #333;
-  }
-
-  .award-org {
-    font-size: 10px;
-    color: #666;
-    margin-left: 5px;
-  }
-
-  .award-year {
-    font-size: 10px;
-    color: #777;
-    white-space: nowrap;
-  }
-
-  /* ===== CERTIFICATIONS ===== */
-  .cert-list { display: table; width: 100%; }
-
-  .cert-row { display: table-row; }
-
-  .cert-row > * {
-    display: table-cell;
-    vertical-align: baseline;
-    padding-bottom: 5px;
-  }
-
-  .cert-name {
-    font-size: 10.5px;
-    font-weight: 500;
-    color: #333;
-    padding-right: 12px;
-  }
-
-  .cert-issuer {
-    font-size: 10px;
-    color: hsl(270, 65%, 43%);
-    white-space: nowrap;
-    padding-right: 12px;
-  }
-
-  .cert-year {
-    font-size: 10px;
-    color: #777;
-    white-space: nowrap;
-    text-align: right;
-    width: 50px;
+  .honor-line span {
+    font-weight: normal;
   }
 
   /* ===== SKILLS ===== */
-  .skills-table { display: table; width: 100%; border-collapse: collapse; }
-
-  .skill-row { display: table-row; }
-
-  .skill-row > * {
-    display: table-cell;
-    vertical-align: top;
-    padding-bottom: 4px;
-    padding-right: 14px;
+  .skill-line {
+    font-size: 10.5pt;
+    margin-bottom: 3px;
   }
 
-  .skill-category {
-    font-size: 10.5px;
-    font-weight: 700;
-    color: #333;
-    white-space: nowrap;
-    width: 90px;
+  .skill-line em {
+    font-style: italic;
   }
 
-  .skill-items {
-    font-size: 10.5px;
-    color: #444;
-    line-height: 1.5;
+  /* ===== CERTIFICATIONS ===== */
+  .cert-line {
+    font-size: 10.5pt;
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+
+  .cert-line span {
+    font-weight: normal;
+    font-style: italic;
   }
 
   /* ===== PRINT ===== */
   @media print {
     body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .page { padding: 0.3in 0.5in; }
+    .page { padding: 0.5in 0.6in; }
   }
 
   .avoid-break,
-  .job,
-  .project,
-  .edu-item,
-  .cert-row,
-  .award-item {
+  .org-block,
+  .edu-block,
+  .section {
     break-inside: avoid;
     page-break-inside: avoid;
   }
-
-  a { white-space: nowrap; }
 </style>
 </head>
 <body>
 <div class="page">
 
   <!-- HEADER -->
-  <div class="header avoid-break">
+  <div class="header">
     <h1>Emelia Cordell</h1>
-    <div class="header-gradient"></div>
-    <div class="contact-row">
-      <span>(832) 610-9463</span>
-      <span class="sep">|</span>
-      <a href="mailto:emeliacordell1@gmail.com">emeliacordell1@gmail.com</a>
-      <span class="sep">|</span>
-      <a href="https://linkedin.com/in/emeliacordell">linkedin.com/in/emeliacordell</a>
-      <span class="sep">|</span>
-      <span>Los Angeles, CA 90048</span>
-      <span class="sep">|</span>
-      <span>FAA Commercial Pilot &mdash; ASEL | Instrument Rating</span>
+    <div class="contact-line">
+      (832) 610-9463 &nbsp;|&nbsp; emeliacordell1@gmail.com &nbsp;|&nbsp; Los Angeles, CA 90048 &nbsp;|&nbsp; linkedin.com/in/emeliacordell
     </div>
   </div>
 
-  <!-- PROFESSIONAL SUMMARY -->
+  <!-- SUMMARY -->
   <div class="section avoid-break">
-    <div class="section-title">Professional Summary</div>
-    <div class="summary-text">
+    <div class="section-title">Summary</div>
+    <p class="summary-para">
       Aviation operations professional and FAA Commercial Pilot with a track record of building departments and automating workflows across a high-tempo flight school environment. Co-founded United Flight Systems&rsquo; Student Success department from zero, drove social media to doubled engagement, and won the Textron Aviation Top Hawk competition &mdash; securing a brand-new aircraft for the school. Operated simultaneously as Executive Assistant, dispatcher, bookkeeper, and front-line student coach, while founding a community organization now serving 250 families annually. Newly based in Los Angeles, pursuing CFI certification, and bringing deep operational instincts alongside genuine aviation passion to every role.
-    </div>
+    </p>
   </div>
 
   <!-- CORE COMPETENCIES -->
-  <div class="section">
+  <div class="section avoid-break">
     <div class="section-title">Core Competencies</div>
-    <div class="competencies-grid">
-      <span class="tag">Aviation Operations</span>
-      <span class="tag">Flight Dispatch &amp; Scheduling</span>
-      <span class="tag">Student Success &amp; Retention</span>
-      <span class="tag">Executive Support</span>
-      <span class="tag">Process Automation</span>
-      <span class="tag">Social Media Strategy</span>
-      <span class="tag">Video Production</span>
-      <span class="tag">Financial Operations</span>
-      <span class="tag">Team Leadership</span>
-      <span class="tag">FAA Compliance</span>
-      <span class="tag">Vendor Management</span>
-      <span class="tag">24/7 Client Support</span>
-      <span class="tag">Community Development</span>
-      <span class="tag">Volunteer Coordination</span>
+    <div class="competencies-line">
+      Aviation Operations &nbsp;&bull;&nbsp; Flight Dispatch &amp; Scheduling &nbsp;&bull;&nbsp; Student Success &amp; Retention &nbsp;&bull;&nbsp; Executive Support &nbsp;&bull;&nbsp; Process Automation &nbsp;&bull;&nbsp; Social Media Strategy &nbsp;&bull;&nbsp; Video Production &nbsp;&bull;&nbsp; Financial Operations &nbsp;&bull;&nbsp; Team Leadership &nbsp;&bull;&nbsp; FAA Compliance &nbsp;&bull;&nbsp; Vendor Management &nbsp;&bull;&nbsp; 24/7 Client Support &nbsp;&bull;&nbsp; Community Development &nbsp;&bull;&nbsp; Volunteer Coordination
     </div>
   </div>
 
-  <!-- WORK EXPERIENCE -->
+  <!-- EXPERIENCE -->
   <div class="section">
     <div class="section-title">Experience</div>
 
-    <div class="job avoid-break">
-      <div class="job-header">
-        <span class="job-company">United Flight Systems<span class="job-location">Spring, TX</span></span>
-        <span class="job-period">November 2023 &ndash; Present</span>
-      </div>
-      <div class="job-meta">Executive Assistant to CEO &nbsp;/&nbsp; Student Success Co-Founder &nbsp;/&nbsp; Operations Assistant</div>
+    <div class="org-block avoid-break">
+      <div class="org-name">United Flight Systems, <span style="font-weight:normal;">Spring, TX</span></div>
+      <div class="org-title">Executive Assistant to CEO, Student Success Co-Founder, and Operations Assistant, November 2023&ndash;Present</div>
       <ul>
-        <li>Serve on the company <strong>Leadership Team</strong> as the CEO's primary support &mdash; executive communications, travel coordination, media relations, and high-level vendor management.</li>
-        <li><strong>Co-founded the Student Success department</strong>: built a white-glove training management system tailored to each student&rsquo;s schedule, goals, financial situation, and timeline &mdash; delivering <strong>24/7 support</strong> throughout their training journey.</li>
-        <li>Directed all social media strategy, content production, and video &mdash; <strong>doubled engagement across all platforms</strong> and drove measurable enrollment growth.</li>
+        <li>Serve on the company&rsquo;s Leadership Team as the CEO&rsquo;s primary support &mdash; overseeing executive communications, travel coordination, media relations, and high-level vendor management.</li>
+        <li>Co-founded the Student Success department: built a white-glove training management system tailored to each student&rsquo;s schedule, goals, financial situation, and timeline &mdash; delivering 24/7 support throughout their training journey.</li>
+        <li>Directed all social media strategy, content production, and video &mdash; doubled engagement across all platforms and drove measurable enrollment growth.</li>
         <li>Managed full-cycle financial operations: invoicing, reconciliations, monthly reporting, and student financial planning.</li>
         <li>Served as the CEO&rsquo;s designated representative in their absence &mdash; managing internal operations, external partnerships, and client-facing communications.</li>
-        <li>Systematically automated core responsibilities to continuously expand scope &mdash; absorbing dispatch, bookkeeping, HR support, and event production <strong>without adding headcount</strong>.</li>
+        <li>Systematically automated core responsibilities to continuously expand scope &mdash; absorbing dispatch, bookkeeping, HR support, and event production without adding headcount.</li>
         <li>Administered the company Scholarship Program end-to-end: applications, outreach, selection coordination, and award logistics.</li>
         <li>Planned and produced company events and community engagements that built school culture and elevated local aviation market visibility.</li>
         <li>Oversaw office management, vendor relationships, supply inventory, and daily operational readiness for a busy Part 61/141 flight school.</li>
       </ul>
     </div>
 
-    <div class="job avoid-break">
-      <div class="job-header">
-        <span class="job-company">Hair Rescue<span class="job-location">Klein, TX</span></span>
-        <span class="job-period">May 2022 &ndash; September 2024</span>
-      </div>
-      <div class="job-meta">Office Manager &amp; Customer Support</div>
+    <div class="org-block avoid-break">
+      <div class="org-name">Hair Rescue, <span style="font-weight:normal;">Klein, TX</span></div>
+      <div class="org-title">Office Manager &amp; Customer Support, May 2022&ndash;September 2024</div>
       <ul>
         <li>Managed client scheduling, onboarding, and follow-up using Square and Google Workspace.</li>
-        <li>Implemented customer service improvements that <strong>increased repeat bookings by 25%</strong>.</li>
+        <li>Implemented customer service improvements that increased repeat bookings by 25%.</li>
         <li>Coordinated payroll, vendor communication, and inventory management.</li>
         <li>Trained new staff on booking procedures, client communication standards, and daily administrative workflows.</li>
       </ul>
     </div>
-
   </div>
 
-  <!-- PROJECTS & INITIATIVES -->
+  <!-- INVOLVEMENT -->
   <div class="section">
-    <div class="section-title">Projects &amp; Initiatives</div>
+    <div class="section-title">Involvement</div>
 
-    <div class="project avoid-break">
-      <div class="project-header">
-        <span class="project-title">Top Hawk Competition Win<span class="project-badge">NATIONAL WINNER</span></span>
-        <span class="project-year">April 2025</span>
-      </div>
-      <div class="project-desc">
-        Competed in the nationwide <strong>Textron Aviation Top Hawk competition</strong> on behalf of United Flight Systems. Produced a 15-minute documentary showcasing the school&rsquo;s mission, facilities, and industry partnerships (ForeFlight, King Schools, E&amp;E Aviation), accompanied by a written narrative and an aircraft integration plan. <strong>Won a brand-new airplane for the school</strong> &mdash; immediately boosting aircraft utilization and enrollment traction.
-        <br><a class="project-link" href="https://youtu.be/6R2RspCSulU">youtube.com/watch?v=6R2RspCSulU</a>
-        &nbsp;&middot;&nbsp;
-        <a class="project-link" href="https://txtav.com/en/top-hawk">txtav.com/en/top-hawk</a>
-      </div>
+    <div class="org-block avoid-break">
+      <div class="org-name">Feeding Houston, <span style="font-weight:normal;">Houston, TX</span></div>
+      <div class="org-title">Founder, August 2017&ndash;Present</div>
+      <ul>
+        <li>Founded and lead a community organization that has served 250+ families annually for 8+ years through a network of 50+ sponsors and community partners.</li>
+        <li>Built all fundraising, logistics, and volunteer coordination systems from scratch (ClickUp).</li>
+        <li>Supervise a team of 20 volunteers across onboarding, training, and program delivery.</li>
+        <li>Manage 50+ sponsor relationships to sustain consistent funding and community impact.</li>
+      </ul>
     </div>
 
-    <div class="project avoid-break">
-      <div class="project-header">
-        <span class="project-title">Feeding Houston<span class="project-badge">FOUNDER</span></span>
-        <span class="project-year">August 2017 &ndash; Present</span>
-      </div>
-      <div class="project-desc">
-        Founded and lead a Houston community organization that has served <strong>250+ families annually</strong> for 8+ years. Built all fundraising, logistics, and volunteer coordination systems from scratch (ClickUp). Supervise a team of <strong>20 volunteers</strong> across onboarding, training, and program delivery. Manage 50+ sponsor relationships to sustain consistent funding and community impact.
-      </div>
+    <div class="org-block avoid-break">
+      <div class="org-name">Residence Hall Association, <span style="font-weight:normal;">Lincoln, NE</span></div>
+      <div class="org-title">Speaker of the Senate, August 2021&ndash;June 2022</div>
+      <ul>
+        <li>Served as primary resource to Senators on drafting and presenting legislation to the RHA Senate.</li>
+        <li>Monitored bill submissions and coordinated with officers to ensure timely review and communication.</li>
+        <li>Chaired the Constitution Revision Committee, maintaining order and engagement throughout sessions.</li>
+      </ul>
     </div>
 
+    <div class="org-block avoid-break">
+      <div class="org-name">Hall Government, <span style="font-weight:normal;">Lincoln, NE</span></div>
+      <div class="org-title">Senator, August 2021&ndash;June 2022</div>
+      <ul>
+        <li>Networked across campus to broaden community outreach and increase residential engagement.</li>
+        <li>Championed resident-led initiatives to strengthen campus involvement and representation.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section avoid-break">
+    <div class="section-title">Projects</div>
+
+    <div class="org-block">
+      <div class="org-name">Textron Aviation Top Hawk Competition &mdash; National Winner</div>
+      <div class="org-title">United Flight Systems, April 2025</div>
+      <ul>
+        <li>Competed in the nationwide Textron Aviation Top Hawk competition on behalf of United Flight Systems.</li>
+        <li>Produced a 15-minute documentary showcasing the school&rsquo;s mission, facilities, and industry partnerships (ForeFlight, King Schools, E&amp;E Aviation), accompanied by a written narrative and an aircraft integration plan.</li>
+        <li>Won a brand-new airplane for the school &mdash; immediately boosting aircraft utilization and enrollment traction.</li>
+        <li>Video: youtube.com/watch?v=6R2RspCSulU &nbsp;&middot;&nbsp; txtav.com/en/top-hawk</li>
+      </ul>
+    </div>
   </div>
 
   <!-- EDUCATION -->
   <div class="section avoid-break">
     <div class="section-title">Education</div>
 
-    <div class="edu-item">
-      <div class="edu-header">
-        <span class="edu-title">Bachelor of Science &nbsp;<span class="edu-org">University of Houston&ndash;Downtown</span></span>
-        <span class="edu-year">May 2024 &ndash; Present</span>
-      </div>
-      <div class="edu-desc">Houston, TX &nbsp;&middot;&nbsp; In progress &nbsp;&middot;&nbsp; Robert B. Watts Scholarship recipient (2024&ndash;2025)</div>
+    <div class="edu-block" style="margin-bottom:8px;">
+      <div class="edu-school">University of Houston&ndash;Downtown, <span style="font-weight:normal;">Houston, TX</span></div>
+      <div class="edu-degree">Bachelor of Science, May 2024&ndash;Present &nbsp;&middot;&nbsp; Robert B. Watts Scholarship recipient (2024&ndash;2025)</div>
     </div>
 
-    <div class="edu-item">
-      <div class="edu-header">
-        <span class="edu-title"><span class="edu-org">University of Nebraska&ndash;Lincoln</span></span>
-        <span class="edu-year">August 2021 &ndash; June 2022</span>
-      </div>
-      <div class="edu-desc">Lincoln, NE &nbsp;&middot;&nbsp; George Beadle Scholarship recipient (2021&ndash;2023)</div>
+    <div class="edu-block">
+      <div class="edu-school">University of Nebraska&ndash;Lincoln, <span style="font-weight:normal;">Lincoln, NE</span></div>
+      <div class="edu-degree">August 2021&ndash;June 2022 &nbsp;&middot;&nbsp; George Beadle Scholarship recipient (2021&ndash;2023)</div>
     </div>
-
   </div>
 
-  <!-- CERTIFICATIONS & LICENSES -->
+  <!-- HONORS -->
   <div class="section avoid-break">
-    <div class="section-title">Certifications &amp; Licenses</div>
-    <div class="cert-list">
-
-      <div class="cert-row">
-        <span class="cert-name">FAA Commercial Pilot Certificate &mdash; Single Engine Land</span>
-        <span class="cert-issuer">Federal Aviation Administration</span>
-        <span class="cert-year"></span>
-      </div>
-
-      <div class="cert-row">
-        <span class="cert-name">FAA Instrument Rating &mdash; Airplane</span>
-        <span class="cert-issuer">Federal Aviation Administration</span>
-        <span class="cert-year"></span>
-      </div>
-
-      <div class="cert-row">
-        <span class="cert-name">Veterans Affairs School Certifying Official (SCO)</span>
-        <span class="cert-issuer">U.S. Department of Veterans Affairs</span>
-        <span class="cert-year"></span>
-      </div>
-
-      <div class="cert-row">
-        <span class="cert-name">CPR Certified</span>
-        <span class="cert-issuer">American Red Cross</span>
-        <span class="cert-year">2023</span>
-      </div>
-
-    </div>
+    <div class="section-title">Honors</div>
+    <div class="honor-line">Top Hawk Winner, <span>United Flight Systems, Spring, TX &mdash; April 2025</span></div>
+    <div class="honor-line">Robert B. Watts Scholarship, <span>United Flight Systems, Spring, TX &mdash; May 2024&ndash;May 2025</span></div>
+    <div class="honor-line">George Beadle Scholarship, <span>University of Nebraska&ndash;Lincoln, Lincoln, NE &mdash; August 2021&ndash;June 2023</span></div>
   </div>
 
   <!-- SKILLS -->
   <div class="section avoid-break">
     <div class="section-title">Skills</div>
-    <div class="skills-table">
+    <div class="skill-line"><em>FAA Commercial Pilot Certificate &mdash; Single Engine Land &nbsp;|&nbsp; Instrument Rating &mdash; Airplane</em></div>
+    <div class="skill-line"><em>Computer:</em> QuickBooks, Excel, ClickUp, Microsoft Suite, Google Workspace, Square, Adobe Suite</div>
+    <div class="skill-line"><em>Language:</em> American Sign Language (conversational)</div>
+  </div>
 
-      <div class="skill-row">
-        <span class="skill-category">Aviation</span>
-        <span class="skill-items">Flight operations, dispatch, student scheduling, ATC communication, FAA compliance, Part 61/141 operations, aircraft coordination</span>
-      </div>
-
-      <div class="skill-row">
-        <span class="skill-category">Operations</span>
-        <span class="skill-items">Executive support, multi-department coordination, process automation, vendor management, project management, logistics, event planning</span>
-      </div>
-
-      <div class="skill-row">
-        <span class="skill-category">Finance</span>
-        <span class="skill-items">QuickBooks, invoicing, reconciliations, monthly reporting, financial planning, payroll coordination</span>
-      </div>
-
-      <div class="skill-row">
-        <span class="skill-category">Marketing</span>
-        <span class="skill-items">Social media strategy, video production, content planning, analytics, Adobe Suite, campaign execution</span>
-      </div>
-
-      <div class="skill-row">
-        <span class="skill-category">Tools</span>
-        <span class="skill-items">ClickUp, Microsoft Suite, Google Workspace, Square, Adobe Suite, Excel, Zoom</span>
-      </div>
-
-      <div class="skill-row">
-        <span class="skill-category">Leadership</span>
-        <span class="skill-items">Team leadership, public speaking, stakeholder communication, community organizing, volunteer management</span>
-      </div>
-
-      <div class="skill-row">
-        <span class="skill-category">Languages</span>
-        <span class="skill-items">English (native) &nbsp;&middot;&nbsp; American Sign Language (conversational)</span>
-      </div>
-
-    </div>
+  <!-- CERTIFICATIONS -->
+  <div class="section avoid-break">
+    <div class="section-title">Certifications</div>
+    <div class="cert-line">Veterans Affairs School Certifying Official (SCO)</div>
+    <div class="cert-line">Cardiopulmonary Resuscitation (CPR), <span>June 2023</span></div>
   </div>
 
 </div>
