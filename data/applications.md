@@ -2,7 +2,7 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
-| 7 | 2026-06-25 | Santa Monica Flyers | Operations / Management Track | 3.8/5 | Offer | ❌ |  | ACCEPTED 2026-06-27. $18/hr PT probationary, manager track goal. Natasha (owner) very impressed. Start date TBD — confirm with Natasha. |
+| 7 | 2026-06-25 | Santa Monica Flyers | Operations / Management Track | 3.8/5 | Offer | ❌ |  | ACCEPTED 2026-06-27. $18/hr PT probationary, manager track goal. Danny promised onboarding steps EOD, missed it; reply was vague ("reach out soon"). ⏰ FOLLOW UP Mon 2026-06-29 if no concrete start date by then. |
 | 8 | 2026-06-25 | Alma at The Grove | Server | N/A | Discarded | ❌ |  | Resigned 2026-06-27 — would not honor time off discussed in interview. |
 | 6 | 2026-06-12 | Aero | Experience Lead (Van Nuys) | 4.0/5 | Applied | ❌ | [6](../reports/006-aero-2026-06-12.md) | Met Holly Haile (Cabin & Lounge Mgr) in person at VNY 2026-06-23. Follow-up email sent per her instructions. Follow up again 2026-08-15. |
 | 1 | 2026-06-12 | ATP Flight School | Training Support Manager | 4.5/5 | Discarded | ❌ | [1](../reports/001-atp-flight-school-2026-06-12.md) | NOT CURRENTLY OPEN — verified 2026-06-12: only A&P maintenance roles open in CA; TSM listing was a closed Fort Myers FL posting. Watch for reopening. |
