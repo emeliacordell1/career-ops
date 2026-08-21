@@ -13,6 +13,15 @@ Operations and executive professional with a track record of building systems, l
 
 ## Experience
 
+### Signature Aviation — Van Nuys, CA
+**Guest Experience Specialist**
+*June 2026 – Present*
+
+- Deliver white-glove service to private and business aviation passengers, flight crews, and VIP clients at the Van Nuys FBO, one of the busiest general aviation airports in the world.
+- Manage the full arrival and departure experience: passenger greeting, lounge hospitality, ground transportation coordination, and catering requests.
+- Coordinate with line service, dispatch, and flight crews to ensure seamless, discreet, and on-time handling.
+- Maintain a premium terminal environment and anticipate client needs in a high-tempo, high-profile aviation setting.
+
 ### United Flight Systems — Spring, TX
 **Executive Assistant to CEO / Student Success Co-Founder / Operations Assistant**
 *November 2023 – June 2026*
